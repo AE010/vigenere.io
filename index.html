@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado Vigenère</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cifrado y Descifrado Vigenere</h1>
+
+        <form id="vigenereForm">
+            <input type="text" id="texto" placeholder="Introduce el texto" required>
+            <input type="text" id="clave" placeholder="Introduce la clave" required>
+            <input type="submit" value="Cifrar" id="cifrarBtn">
+            <input type="submit" value="Descifrar" id="descifrarBtn">
+        </form>
+
+        <div id="resultados">
+            <h2>Resultados</h2>
+            <div id="tablaResultados"></div>
+            <div id="resultadoFinal" style="margin-top: 20px; font-size: 18px; color: #333;"></div>
+        </div>
+    </div>
+
+    <script src="vigenere2.js"></script>
+    <script src="vigenere.js"></script>
+
+    <script>
+        const form = document.getElementById('vigenereForm');
+        const claveInput = document.getElementById('clave');
+        const cifrarBtn = document.getElementById('cifrarBtn');
+        const descifrarBtn = document.getElementById('descifrarBtn');
+
+        const regex = /^[A-Za-z]+$/;
+
+        function validarClave(event) {
+            const clave = claveInput.value;
+            if (!regex.test(clave)) {
+                event.preventDefault();
+                alert("La clave solo debe contener letras alfabéticas.");
+                claveInput.focus();
+            }
+        }
+
+        cifrarBtn.addEventListener('click', validarClave);
+        descifrarBtn.addEventListener('click', validarClave);
+    </script>
+</body>
+</html>

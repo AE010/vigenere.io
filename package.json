@@ -1,0 +1,13 @@
+{
+  "name": "vigenere-cipher",
+  "version": "1.0.0",
+  "description": "Cifrado y descifrado con el cifrado Vigenère",
+  "main": "vigenere.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  }
+}
